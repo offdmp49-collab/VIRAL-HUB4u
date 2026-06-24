@@ -3,17 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>
-VIRAL-HUB4u</title>
+<title>VIRAL-HUB4u</title>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0d1117;--bg2:#161b22;--bg3:#1c2230;--red:#e8192c;--red2:#ff3347;--gold:#ffd700;--green:#00c853;--blue:#1565c0;--text:#f0f0f0;--text2:#8b949e;--border:#30363d;}
+:root{--bg:#0d1117;--bg2:#161b22;--bg3:#1c2230;--red:#7c3aed;--red2:#9f5ff7;--gold:#ffd700;--green:#10b981;--blue:#0ea5e9;--text:#f0f0f0;--text2:#8b949e;--border:#30363d;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--bg);color:var(--text);font-family:'Hind Siliguri',sans-serif;min-height:100vh;overflow-x:hidden;padding-bottom:80px;}
-.top-banner{background:linear-gradient(90deg,#b30000,var(--red),#b30000);text-align:center;padding:9px 16px;font-size:14px;font-weight:700;}
+.top-banner{background:linear-gradient(90deg,#4c1d95,var(--red),#4c1d95);text-align:center;padding:9px 16px;font-size:14px;font-weight:700;}
 header{background:var(--bg2);border-bottom:2px solid var(--red);padding:0 14px;display:flex;align-items:center;justify-content:space-between;height:54px;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.5);}
 .logo{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:700;color:#fff;}
-.logo-icon{width:30px;height:30px;background:linear-gradient(135deg,var(--red),var(--red2));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.logo-icon{width:30px;height:30px;background:linear-gradient(135deg,#7c3aed,#9f5ff7);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:16px;}
 .logo span{color:var(--red);}
 .search-btn{background:linear-gradient(135deg,var(--red),var(--red2));border:none;color:#fff;padding:8px 16px;border-radius:8px;font-family:inherit;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:6px;font-weight:600;}
 /* CHAT POPUP */
@@ -42,7 +41,7 @@ header{background:var(--bg2);border-bottom:2px solid var(--red);padding:0 14px;d
 .post-thumb-wrap img{width:100%;height:100%;object-fit:cover;}
 .post-thumb-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:28px;}
 .play-btn-sm{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3);}
-.play-btn-sm span{width:32px;height:32px;background:rgba(232,25,44,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;}
+.play-btn-sm span{width:32px;height:32px;background:rgba(124,58,237,.85);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;}
 .badges-row{position:absolute;top:5px;left:5px;display:flex;gap:3px;flex-wrap:wrap;}
 .bh{background:var(--blue);color:#fff;font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;}
 .bp{background:var(--gold);color:#000;font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;}
@@ -59,7 +58,7 @@ header{background:var(--bg2);border-bottom:2px solid var(--red);padding:0 14px;d
 .trending-thumb img{width:100%;height:100%;object-fit:cover;}
 .trending-thumb-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:40px;}
 .trending-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25);}
-.trending-play-btn{width:52px;height:52px;background:rgba(232,25,44,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;}
+.trending-play-btn{width:52px;height:52px;background:rgba(124,58,237,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;}
 .trending-title{padding:10px 12px 12px;font-size:15px;font-weight:600;}
 /* BOTTOM NAV */
 .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:var(--bg2);border-top:1px solid var(--border);display:flex;justify-content:space-around;align-items:flex-end;padding:6px 0 10px;z-index:100;}
@@ -67,7 +66,7 @@ header{background:var(--bg2);border-bottom:2px solid var(--red);padding:0 14px;d
 .nav-item.active,.nav-item:hover{color:var(--red);}
 .nav-item .ni{font-size:22px;}
 .nav-home{position:relative;top:-8px;}
-.nav-home .ni-wrap{background:linear-gradient(135deg,var(--red),var(--red2));border-radius:50%;width:52px;height:52px;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 0 18px rgba(232,25,44,.5);}
+.nav-home .ni-wrap{background:linear-gradient(135deg,var(--red),var(--red2));border-radius:50%;width:52px;height:52px;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 0 18px rgba(124,58,237,.5);}
 .notif-wrap{position:relative;}
 .notif-dot{position:absolute;top:-3px;right:-3px;background:var(--red);color:#fff;font-size:8px;min-width:16px;height:16px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 3px;}
 /* EMPTY / LOADING */
@@ -99,13 +98,13 @@ header{background:var(--bg2);border-bottom:2px solid var(--red);padding:0 14px;d
 .ad-loader{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:500;align-items:center;justify-content:center;flex-direction:column;}
 .ad-loader.show{display:flex;}
 .ad-spin{width:46px;height:46px;border:3px solid var(--border);border-top-color:var(--red);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:14px;}
-.float-msg{position:fixed;bottom:90px;right:16px;width:48px;height:48px;background:linear-gradient(135deg,var(--red),var(--red2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;box-shadow:0 4px 15px rgba(232,25,44,.5);z-index:99;}
+.float-msg{position:fixed;bottom:90px;right:16px;width:48px;height:48px;background:linear-gradient(135deg,var(--red),var(--red2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;box-shadow:0 4px 15px rgba(124,58,237,.5);z-index:99;}
 </style>
 </head>
 <body>
-<div class="top-banner">🔥 BANGLA-VIRAL-X — সেরা ভিডিও কালেকশন 🔥</div>
+<div class="top-banner">🔥 VIRAL-HUB4u — সেরা ভাইরাল ভিডিও 🔥</div>
 <header>
-  <div class="logo"><div class="logo-icon">🎬</div><span>Bangla</span>-Viral-X</div>
+  <div class="logo"><div class="logo-icon">🎬</div><span>VIRAL</span>-HUB4u</div>
   <button class="search-btn" onclick="openSearch()">🔍 খুঁজুন</button>
 </header>
 
@@ -126,10 +125,10 @@ header{background:var(--bg2);border-bottom:2px solid var(--red);padding:0 14px;d
 <div class="float-msg" onclick="openChatLink()">✉️</div>
 
 <nav class="bottom-nav">
-  <div class="nav-item active" id="nav-all" onclick="navFilter('all','nav-all')"><span class="ni">📁</span><span>ফাইল</span></div>
-  <div class="nav-item" id="nav-new" onclick="navFilter('new','nav-new')"><span class="ni">🎬</span><span>নতুন</span></div>
-  <div class="nav-item nav-home" id="nav-home" onclick="navFilter('all','nav-home');scrollToTop()"><div class="ni-wrap">🏠</div></div>
-  <div class="nav-item notif-wrap" id="nav-trend" onclick="navFilter('trending','nav-trend')"><span class="ni">📷</span><span>ট্রেন্ড</span><span class="notif-dot" id="notifDot">0</span></div>
+  <div class="nav-item active" onclick="scrollToTop()"><span class="ni">📁</span><span>ফাইল</span></div>
+  <div class="nav-item" onclick="scrollToTop()"><span class="ni">🎬</span><span>নতুন</span></div>
+  <div class="nav-item nav-home" onclick="scrollToTop()"><div class="ni-wrap">🏠</div></div>
+  <div class="nav-item notif-wrap"><span class="ni">📷</span><span>ট্রেন্ড</span><span class="notif-dot" id="notifDot">0</span></div>
   <div class="nav-item" onclick="openSearch()"><span class="ni">🔍</span><span>খুঁজুন</span></div>
 </nav>
 
@@ -160,7 +159,7 @@ header{background:var(--bg2);border-bottom:2px solid var(--red);padding:0 14px;d
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
-const app = initializeApp({ databaseURL: "https://bangla-viral-x-default-rtdb.firebaseio.com" });
+const app = initializeApp({ databaseURL: "https://bd-video-hub-b8f5c-default-rtdb.firebaseio.com" });
 const db = getDatabase(app);
 
 let posts = [], settings = {}, clickMap = {}, currentPost = null;
@@ -175,15 +174,8 @@ onValue(ref(db,'settings'), snap => {
   if(settings.monetagScript && !document.getElementById('monetag-script')) {
     const s=document.createElement('script'); s.id='monetag-script'; s.src=settings.monetagScript; document.head.appendChild(s);
   }
-  // Adsterra Popunder script
   if(settings.adsterraScript && !document.getElementById('adsterra-script')) {
     const s=document.createElement('script'); s.id='adsterra-script'; s.src=settings.adsterraScript; document.head.appendChild(s);
-  }
-  // Adsterra Social Bar (পুরো script tag)
-  if(settings.adsterraSocialBar && !document.getElementById('ads-socialbar')) {
-    const wrap=document.createElement('div'); wrap.id='ads-socialbar'; wrap.innerHTML=settings.adsterraSocialBar;
-    document.body.insertBefore(wrap, document.body.firstChild);
-    wrap.querySelectorAll('script').forEach(s=>{ const ns=document.createElement('script'); ns.src=s.src||''; ns.textContent=s.textContent; document.body.appendChild(ns); });
   }
 });
 
@@ -235,11 +227,8 @@ window._click = id => {
   clickMap[id]++;
   const n=clickMap[id];
   if(n===1){
-    if(settings.popunderUrl){
-      const a=document.createElement('a'); a.href=settings.popunderUrl; a.target='_blank'; a.rel='noopener noreferrer';
-      document.body.appendChild(a); a.click(); document.body.removeChild(a);
-    }
-    showLoader(1000);
+    if(settings.popunderUrl) try{window.open(settings.popunderUrl,'_blank')}catch(e){}
+    showLoader(1200);
   } else if(n===2){
     const url=post.directLink||settings.directLink2||'';
     if(url) window.open(url,'_blank');
@@ -284,27 +273,6 @@ window.doSearch=q=>{
     <div class="post-card-title">${p.title}</div></div>`).join(''):'<p style="color:#aaa;grid-column:1/-1;text-align:center;padding:30px">কিছু পাওয়া যায়নি</p>';
 };
 function showLoader(ms){ const e=document.getElementById('adLoader'); e.classList.add('show'); setTimeout(()=>e.classList.remove('show'),ms); }
-
-// নিচের বাটন ফিল্টার
-window.navFilter=(filter,navId)=>{
-  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-  const el=document.getElementById(navId); if(el) el.classList.add('active');
-  const c=document.getElementById('mainContent');
-  let active=posts.filter(p=>p.active!==false);
-  if(filter==='new') active=active.filter(p=>p.badgeNew);
-  else if(filter==='trending') active=active.filter(p=>p.trending);
-  if(!active.length){ c.innerHTML='<div class="empty-state"><div class="ei">🎬</div><p style="font-size:16px">কোনো ভিডিও নেই</p></div>'; return; }
-  const byDate={};
-  active.forEach(p=>{ const k=p.date||'আজ'; if(!byDate[k])byDate[k]=[]; byDate[k].push(p); });
-  let html='';
-  Object.keys(byDate).forEach(date=>{
-    const g=byDate[date];
-    html+=`<div class="section-header"><span class="badge-num">${g.length}</span><span class="section-date">${date} • TODAY NEW</span></div>
-    <div class="posts-scroll-wrap"><div class="posts-scroll">${g.map(buildSmallCard).join('')}</div></div>`;
-  });
-  if(filter==='all'){ const tr=active.filter(p=>p.trending); if(tr.length) html+=`<div class="trending-header"><h2>🔥 TRENDING NOW</h2></div><div class="trending-posts">${tr.map(buildTrendingCard).join('')}</div>`; }
-  c.innerHTML=html; scrollToTop();
-};
 window.scrollToTop=()=>window.scrollTo({top:0,behavior:'smooth'});
 window.openChatLink=()=>{ if(settings.chatLink) window.open(settings.chatLink,'_blank'); };
 </script>
