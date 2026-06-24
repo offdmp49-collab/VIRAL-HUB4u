@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Panel – 
-VIRAL-HUB4u</title>
+<title>Admin Panel – VIRAL-HUB4u</title>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0d1117;--bg2:#161b22;--bg3:#1c2230;--bg4:#222d3e;--red:#e8192c;--red2:#ff3347;--gold:#ffd700;--green:#00c853;--blue:#1e88e5;--text:#f0f0f0;--text2:#8b949e;--border:#30363d;}
+:root{--bg:#0d1117;--bg2:#161b22;--bg3:#1c2230;--bg4:#222d3e;--red:#7c3aed;--red2:#9f5ff7;--gold:#ffd700;--green:#10b981;--blue:#0ea5e9;--text:#f0f0f0;--text2:#8b949e;--border:#30363d;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--bg);color:var(--text);font-family:'Hind Siliguri',sans-serif;min-height:100vh;}
 /* LOGIN */
@@ -30,9 +29,9 @@ body{background:var(--bg);color:var(--text);font-family:'Hind Siliguri',sans-ser
 .nav-tab:hover,.nav-tab.active{color:#fff;}
 .nav-tab.active{border-bottom-color:var(--red);}
 .ml-auto{margin-left:auto;display:flex;align-items:center;gap:8px;flex-shrink:0;}
-.logout-btn{background:rgba(232,25,44,.15);border:1px solid var(--red);color:var(--red);font-family:inherit;font-size:12px;padding:5px 12px;border-radius:8px;cursor:pointer;}
+.logout-btn{background:rgba(124,58,237,.15);border:1px solid var(--red);color:var(--red);font-family:inherit;font-size:12px;padding:5px 12px;border-radius:8px;cursor:pointer;}
 .admin-badge{background:var(--red);color:#fff;font-size:11px;padding:2px 8px;border-radius:12px;}
-.user-circle{width:30px;height:30px;background:linear-gradient(135deg,var(--red),var(--red2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;}
+.user-circle{width:30px;height:30px;background:linear-gradient(135deg,#7c3aed,#9f5ff7);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;}
 .page{display:none;padding:16px;max-width:900px;margin:0 auto;}
 .page.active{display:block;}
 /* STATS */
@@ -83,7 +82,7 @@ body{background:var(--bg);color:var(--text);font-family:'Hind Siliguri',sans-ser
 .btn-row{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;}
 .btn-primary{background:linear-gradient(135deg,var(--red),var(--red2));border:none;color:#fff;padding:11px 20px;border-radius:10px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;}
 .btn-secondary{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:11px 20px;border-radius:10px;font-family:inherit;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:6px;}
-.btn-danger{background:rgba(232,25,44,.15);border:1px solid var(--red);color:var(--red);padding:7px 12px;border-radius:8px;font-family:inherit;font-size:12px;cursor:pointer;}
+.btn-danger{background:rgba(124,58,237,.15);border:1px solid var(--red);color:var(--red);padding:7px 12px;border-radius:8px;font-family:inherit;font-size:12px;cursor:pointer;}
 .btn-edit{background:rgba(30,136,229,.15);border:1px solid var(--blue);color:var(--blue);padding:7px 12px;border-radius:8px;font-family:inherit;font-size:12px;cursor:pointer;}
 /* POST LIST */
 .post-list-item{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:10px;display:flex;gap:10px;align-items:flex-start;}
@@ -115,7 +114,7 @@ body{background:var(--bg);color:var(--text);font-family:'Hind Siliguri',sans-ser
 <!-- LOGIN -->
 <div id="loginPage">
   <div class="login-box">
-    <div class="login-logo">🎬 <span>BD</span> Video Hub</div>
+    <div class="login-logo">🔥 <span>VIRAL</span>-HUB4u</div>
     <div class="login-sub">অ্যাডমিন প্যানেলে প্রবেশ করুন</div>
     <input type="password" class="form-input" id="loginPass" placeholder="পাসওয়ার্ড দিন" onkeydown="if(event.key==='Enter')doLogin()">
     <button class="login-btn" onclick="doLogin()">✓ লগইন করুন</button>
@@ -328,11 +327,19 @@ const db = getDatabase(app);
 
 const DEFAULT_PASS = 'admin123';
 let posts = [], settings = {};
+let currentAdminPass = DEFAULT_PASS; // loaded from Firebase
 
 // ===== AUTH =====
-function getPass(){ return localStorage.getItem('bdvh_pass') || DEFAULT_PASS; }
+// Load admin password from Firebase on startup
+onValue(ref(db, 'admin/password'), snap => {
+  currentAdminPass = snap.val() || DEFAULT_PASS;
+});
+
+function getPass(){ return currentAdminPass; }
+
 window.doLogin = () => {
-  if(document.getElementById('loginPass').value === getPass()){
+  const entered = document.getElementById('loginPass').value;
+  if(entered === getPass()){
     document.getElementById('loginPage').style.display='none';
     document.getElementById('adminPanel').style.display='block';
     loadData();
@@ -564,15 +571,17 @@ window.saveSettings=async()=>{
   showToast('✅ সেটিংস সেভ হয়েছে!');
 };
 
-window.changePassword=()=>{
+window.changePassword=async()=>{
   const curr=document.getElementById('currPass').value;
-  const nw=document.getElementById('newPass').value;
-  const conf=document.getElementById('confirmPass').value;
+  const nw=document.getElementById('newPass').value.trim();
+  const conf=document.getElementById('confirmPass').value.trim();
   if(curr!==getPass()){showToast('বর্তমান পাসওয়ার্ড ভুল!',true);return;}
   if(!nw||nw.length<4){showToast('কমপক্ষে ৪ অক্ষর দিন!',true);return;}
   if(nw!==conf){showToast('পাসওয়ার্ড মিলছে না!',true);return;}
-  localStorage.setItem('bdvh_pass',nw);
-  showToast('✅ পাসওয়ার্ড পরিবর্তন হয়েছে!');
+  // Save to Firebase — works across all devices & browsers
+  await set(ref(db,'admin/password'), nw);
+  currentAdminPass = nw;
+  showToast('✅ পাসওয়ার্ড পরিবর্তন হয়েছে! সব ডিভাইসে আপডেট হয়েছে।');
   ['currPass','newPass','confirmPass'].forEach(id=>document.getElementById(id).value='');
 };
 
